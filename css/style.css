@@ -1,0 +1,1266 @@
+/* ============================================================
+   STYLESHEET: style.css
+   DESCRIPTION: External CSS stylesheet for the Booking.com
+   website. Controls all layout, typography, colours and
+   spacing across all five pages. Linked to every HTML page.
+   AUTHOR: [Angel Qosha]
+   MODULE: WEDE5020
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CSS RESET AND BASE STYLES
+   Removes default browser margins and padding, and sets the
+   base font and box-sizing for the whole site.
+   ------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sets the base font to Open Sans from Google Fonts */
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 100%;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* All headings use Poppins for a clean, modern look */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #003580;
+}
+
+/* Removes underline from all links by default */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Removes bullet points from all unordered lists by default */
+ul {
+  list-style: none;
+}
+
+/* Makes all images scale responsively within their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   HEADER STYLES
+   Blue header bar with white text and nav links.
+   Uses flexbox to space logo on the left and nav on the right.
+   ------------------------------------------------------------ */
+header {
+  background-color: #003580;  /* Booking.com dark blue */
+  padding: 0 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Inner wrapper uses flexbox to align logo and nav side by side */
+.header-inner {
+  max-width: 75.0rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.375rem;
+}
+
+/* Logo text colour override so it shows white on the blue header */
+.logo a {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* Navigation list displays horizontally using flexbox */
+nav ul {
+  display: flex;
+  gap: 1.875rem;
+}
+
+/* Navigation link styles */
+nav ul li a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.3125rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+/* Hover state and active page highlight */
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 2px solid #febb02;  /* Booking.com yellow accent */
+  color: #febb02;
+}
+
+/* ------------------------------------------------------------
+   BUTTON STYLES
+   Two button sizes: .btn (large) and .btn-small (compact).
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  background-color: #0071c2;
+  color: #ffffff;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #003580;
+}
+
+/* Smaller button used on cards */
+.btn-small {
+  display: inline-block;
+  background-color: #0071c2;
+  color: #ffffff;
+  padding: 0.5rem 1.125rem;
+  border-radius: 0.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-small:hover {
+  background-color: #003580;
+}
+
+/* ------------------------------------------------------------
+   HERO SECTION STYLES
+   Full-width banner with a hero image and overlaid text.
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 31.25rem;
+  overflow: hidden;
+}
+
+/* Hero image fills the full width and height of the section */
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark semi-transparent overlay to make white text readable */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Text positioned in the centre of the hero image */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: #ffffff;
+  width: 80%;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 1.0rem;
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  margin-bottom: 1.75rem;
+  color: #f0f0f0;
+}
+
+/* ------------------------------------------------------------
+   INTRODUCTION SECTION
+   ------------------------------------------------------------ */
+.intro-section {
+  max-width: 56.25rem;
+  margin: 3.75rem auto;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.intro-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.intro-section p {
+  margin-bottom: 1.0rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ------------------------------------------------------------
+   FEATURED SERVICES SECTION (homepage grid)
+   ------------------------------------------------------------ */
+.featured-services {
+  background-color: #f5f5f5;
+  padding: 3.75rem 2.5rem;
+  text-align: center;
+}
+
+.featured-services h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Three-column grid for service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem;
+  max-width: 75.0rem;
+  margin: 0 auto;
+}
+
+/* Individual service card */
+.service-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.service-card img {
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  padding: 1.0rem 1.25rem 0.5rem;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  padding: 0 1.25rem 1.0rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.service-card .btn-small {
+  margin: 0 1.25rem 1.25rem;
+}
+
+/* ------------------------------------------------------------
+   PAGE BANNER (services page top section)
+   ------------------------------------------------------------ */
+.page-banner {
+  background-color: #003580;
+  color: #ffffff;
+  text-align: center;
+  padding: 3.75rem 1.25rem;
+}
+
+.page-banner h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-banner p {
+  font-size: 1.1rem;
+  color: #cce0f5;
+}
+
+/* ------------------------------------------------------------
+   SERVICES DETAIL SECTION (services page rows)
+   ------------------------------------------------------------ */
+.services-detail {
+  max-width: 68.75rem;
+  margin: 0 auto;
+  padding: 3.75rem 1.25rem;
+}
+
+/* Each service row: image left, text right */
+.service-row {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 3.75rem;
+}
+
+/* Reversed row: text left, image right */
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-row .service-img {
+  flex: 0 0 23.75rem;
+}
+
+.service-row .service-img img {
+  width: 100%;
+  height: 16.25rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.service-row .service-desc {
+  flex: 1;
+}
+
+.service-row .service-desc h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-row .service-desc p {
+  color: #555;
+  margin-bottom: 0.875rem;
+}
+
+.service-row .service-desc ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  color: #555;
+}
+
+.service-row .service-desc ul li {
+  margin-bottom: 0.375rem;
+}
+
+/* ------------------------------------------------------------
+   SERVICES SEARCH / FILTER BAR
+   ------------------------------------------------------------ */
+.services-search {
+  margin-bottom: 1.875rem;
+}
+
+.services-search input {
+  width: 100%;
+  max-width: 28.125rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+}
+
+.services-search input:focus {
+  outline: none;
+  border-color: #0071c2;
+}
+
+.search-count {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* Visually hidden but still readable by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   SERVICES ACCORDION
+   ------------------------------------------------------------ */
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f7fa;
+  border: none;
+  padding: 1.125rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #003580;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordion-trigger:hover {
+  background-color: #eaf0f8;
+}
+
+.accordion-trigger:focus-visible {
+  outline: 2px solid #0071c2;
+  outline-offset: -2px;
+}
+
+.accordion-icon {
+  transition: transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  padding: 1.5rem;
+}
+
+.accordion-panel .service-row {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   VIDEO SECTION
+   ------------------------------------------------------------ */
+.video-section {
+  background-color: #f5f5f5;
+  padding: 3.75rem 1.25rem;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.video-section p {
+  color: #555;
+  margin-bottom: 1.875rem;
+}
+
+/* Centres the YouTube iframe */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------
+   ABOUT SECTION (two-column layout)
+   ------------------------------------------------------------ */
+.about-section {
+  display: flex;
+  gap: 3.125rem;
+  max-width: 68.75rem;
+  margin: 3.75rem auto;
+  padding: 0 1.25rem;
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 0 0 25.0rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: 31.25rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.about-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-text h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-text p {
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.about-text ol {
+  padding-left: 1.25rem;
+  color: #555;
+}
+
+.about-text ol li {
+  margin-bottom: 0.375rem;
+}
+
+/* ------------------------------------------------------------
+   GALLERY SECTION + LIGHTBOX (about_us.html)
+   ------------------------------------------------------------ */
+.gallery-section {
+  max-width: 68.75rem;
+  margin: 1.25rem auto 3.75rem;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-section > p {
+  color: #555;
+  margin-bottom: 1.875rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.gallery-item {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid #0071c2;
+  outline-offset: 2px;
+}
+
+/* Full-screen overlay shown when a thumbnail is clicked */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox[hidden] {
+  display: none !important;
+}
+
+.lightbox-image {
+  max-width: 80%;
+  max-height: 75vh;
+  border-radius: 0.375rem;
+}
+
+.lightbox-caption {
+  color: #ffffff;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  max-width: 80%;
+  text-align: center;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ------------------------------------------------------------
+   ENQUIRY SECTION (two-column layout)
+   ------------------------------------------------------------ */
+.enquiry-section {
+  display: flex;
+  gap: 3.75rem;
+  max-width: 68.75rem;
+  margin: 3.75rem auto;
+  padding: 0 1.25rem;
+  align-items: flex-start;
+}
+
+/* Left column: GET IN TOUCH heading and contact details */
+.enquiry-info {
+  flex: 0 0 17.5rem;
+  background-color: #003580;
+  color: #ffffff;
+  padding: 2.5rem 1.875rem;
+  border-radius: 0.5rem;
+}
+
+.enquiry-info h1 {
+  font-size: 2.5rem;
+  color: #febb02;
+  margin-bottom: 1.875rem;
+  line-height: 1.2;
+}
+
+.enquiry-info p {
+  margin-bottom: 1.0rem;
+  font-size: 1rem;
+  color: #cce0f5;
+}
+
+/* Right column: the form */
+.enquiry-form {
+  flex: 1;
+}
+
+/* Form field shared styles */
+.enquiry-form label,
+.contact-form-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+  color: #003580;
+}
+
+.enquiry-form input,
+.enquiry-form textarea,
+.contact-form-section input,
+.contact-form-section textarea {
+  width: 100%;
+  padding: 0.75rem 1.0rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.375rem;
+}
+
+.enquiry-form input:focus,
+.enquiry-form textarea:focus,
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+  outline: none;
+  border-color: #0071c2;
+}
+
+/* Error messages shown by JavaScript */
+.error-msg {
+  display: block;
+  color: #cc0000;
+  font-size: 0.82rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Red border applied by JavaScript to invalid fields */
+.input-error {
+  border-color: #cc0000 !important;
+  background-color: #fff5f5;
+}
+
+/* Small inline confirmation shown under the footer mini-form */
+.footer-form-response {
+  color: #66bb6a;
+  font-size: 0.82rem;
+  margin-top: 0.5rem;
+}
+
+/* Confirmation response message */
+.response-message {
+  background-color: #e8f5e9;
+  border: 1px solid #66bb6a;
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.response-message h3 {
+  color: #2e7d32;
+  margin-bottom: 0.625rem;
+}
+
+/* ------------------------------------------------------------
+   CONTACT PAGE STYLES
+   ------------------------------------------------------------ */
+.contact-section {
+  display: flex;
+  gap: 3.125rem;
+  max-width: 68.75rem;
+  margin: 3.75rem auto 2.5rem;
+  padding: 0 1.25rem;
+}
+
+.contact-info,
+.contact-address {
+  flex: 1;
+}
+
+.contact-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-info h3,
+.contact-address h3 {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.contact-info p,
+.contact-address p {
+  color: #555;
+  margin-bottom: 0.625rem;
+}
+
+.contact-info a {
+  color: #0071c2;
+}
+
+/* Interactive Leaflet map showing all offices at once */
+.interactive-map-section {
+  max-width: 68.75rem;
+  margin: 3.75rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.interactive-map-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.interactive-map-section p {
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.office-map {
+  width: 100%;
+  height: 25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+/* Maps grid: 2 columns */
+.maps-section {
+  max-width: 68.75rem;
+  margin: 0 auto 3.75rem;
+  padding: 0 1.25rem;
+}
+
+.maps-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.875rem;
+}
+
+.maps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+}
+
+.map-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.map-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Contact form section */
+.contact-form-section {
+  max-width: 43.75rem;
+  margin: 0 auto 3.75rem;
+  padding: 0 1.25rem;
+}
+
+.contact-form-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   FOOTER STYLES
+   Dark footer with three columns and a copyright bar.
+   ------------------------------------------------------------ */
+footer {
+  background-color: #003580;
+  color: #cce0f5;
+  padding-top: 3.125rem;
+}
+
+/* Three-column footer layout */
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 75.0rem;
+  margin: 0 auto;
+  padding: 0 2.5rem 2.5rem;
+}
+
+/* Footer column headings */
+.footer-inner h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-inner p {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: #aaccee;
+}
+
+/* Footer mini form fields */
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #335599;
+  border-radius: 0.25rem;
+  background-color: #002060;
+  color: #ffffff;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-form button {
+  background-color: #febb02;
+  color: #003580;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.footer-form button:hover {
+  background-color: #e0a800;
+}
+
+/* Footer sitemap list */
+.footer-sitemap ul {
+  list-style: none;
+}
+
+.footer-sitemap ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-sitemap ul li a {
+  color: #aaccee;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-sitemap ul li a:hover {
+  color: #febb02;
+}
+
+/* Footer info column */
+.footer-info img {
+  margin-bottom: 1.0rem;
+  filter: brightness(0) invert(1);
+  max-width: 7.5rem;
+}
+
+.footer-info p {
+  font-size: 0.9rem;
+  margin-bottom: 0.625rem;
+  color: #aaccee;
+}
+
+/* Copyright bar at the very bottom */
+.footer-bottom {
+  background-color: #002060;
+  text-align: center;
+  padding: 1.0rem;
+  font-size: 0.82rem;
+  color: #7799bb;
+}
+
+/* ============================================================
+   SECTION: RESPONSIVE DESIGN
+   Tablet breakpoint: max-width 768px
+   Mobile breakpoint: max-width 480px
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   TABLET STYLES (max-width: 768px)
+   Applies when screen is 768px wide or smaller.
+   Multi-column layouts switch to single column.
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+
+  /* On tablet, logo and hamburger sit side by side, nav drops below */
+  .header-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    gap: 0.625rem;
+  }
+
+  /* --------------------------------------------------------
+     TYPOGRAPHY SCALING (TABLET)
+     Reduces the root font size so every element using rem
+     units (almost all text on this site) scales down
+     proportionally, instead of fixing headings one by one.
+     -------------------------------------------------------- */
+  html {
+    font-size: 93.75%; /* 16px base becomes 15px */
+  }
+
+  h1 {
+    line-height: 1.3;
+  }
+
+  p, li {
+    line-height: 1.55;
+  }
+
+  /* Push main content down to account for taller stacked header */
+  main {
+    margin-top: 0.625rem;
+  }
+
+  /* Show the hamburger toggle button on tablet and below */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Nav is hidden by default on small screens, shown as a
+     full-width dropdown when .open is added by JavaScript */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 0;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Smaller hero height on tablet */
+  .hero {
+    height: 22.5rem;
+  }
+
+  /* Smaller hero heading on tablet */
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  /* Hero tagline smaller on tablet */
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  /* Services grid switches from 3 columns to 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About section stacks vertically */
+  .about-section {
+    flex-direction: column;
+  }
+
+  /* About image becomes full width */
+  .about-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .about-image img {
+    height: 18.75rem;
+  }
+
+  /* Service rows stack vertically */
+  .service-row {
+    flex-direction: column;
+  }
+
+  /* Reversed service rows also stack normally */
+  .service-row.reverse {
+    flex-direction: column;
+  }
+
+  /* Service image becomes full width */
+  .service-row .service-img {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Enquiry section stacks vertically */
+  .enquiry-section {
+    flex-direction: column;
+  }
+
+  /* Enquiry info panel becomes full width */
+  .enquiry-info {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Contact section stacks vertically */
+  .contact-section {
+    flex-direction: column;
+  }
+
+  /* Maps grid switches from 2 columns to 1 column */
+  .maps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery grid switches from 4 columns to 2 on tablet */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Interactive map shorter on tablet */
+  .office-map {
+    height: 18.75rem;
+  }
+
+  /* Accordion header padding reduced */
+  .accordion-trigger {
+    padding: 1rem 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  /* Footer switches from 3 columns to 1 column */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+    padding: 0 1.25rem 1.875rem;
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE STYLES (max-width: 480px)
+   Applies when screen is 480px wide or smaller.
+   Covers most smartphones.
+   ------------------------------------------------------------ */
+@media (max-width: 480px) {
+
+  /* --------------------------------------------------------
+     TYPOGRAPHY SCALING (MOBILE)
+     Scales the root font size down further so all rem-based
+     text (headings, paragraphs, list items, nav, buttons)
+     is appropriately smaller on phones.
+     -------------------------------------------------------- */
+  html {
+    font-size: 87.5%; /* 16px base becomes 14px */
+  }
+
+  body {
+    line-height: 1.5;
+  }
+
+  /* Even smaller hero on mobile */
+  .hero {
+    height: 17.5rem;
+  }
+
+  /* Hero heading on mobile */
+  .hero-text h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  /* Hero tagline on mobile */
+  .hero-text p {
+    font-size: 0.9rem;
+    margin-bottom: 1.0rem;
+  }
+
+  /* Hero text takes more width on small screens */
+  .hero-text {
+    width: 92%;
+  }
+
+  /* Services grid switches to single column on mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gallery grid switches to 1 column on mobile */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Lightbox controls shrink and reposition on small screens */
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .lightbox-image {
+    max-width: 92%;
+    max-height: 65vh;
+  }
+
+  /* Interactive map shorter still on mobile */
+  .office-map {
+    height: 15.625rem;
+  }
+
+  /* Accordion service rows stack on mobile, same as regular service rows */
+  .accordion-panel .service-row {
+    flex-direction: column;
+  }
+
+  .accordion-panel .service-row .service-img {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Smaller heading on mobile */
+  .intro-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .featured-services h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .enquiry-info h1 {
+    font-size: 2rem;
+  }
+
+  /* Full width buttons on mobile */
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+  }
+
+  /* Reduce padding on mobile throughout */
+  .featured-services {
+    padding: 2.5rem 1.0rem;
+  }
+
+  .services-detail {
+    padding: 2.5rem 1.0rem;
+  }
+
+  .enquiry-section,
+  .about-section,
+  .contact-section,
+  .maps-section,
+  .contact-form-section {
+    padding: 0 1.0rem;
+    margin: 2.5rem auto;
+  }
+
+  .intro-section {
+    margin: 2.5rem auto;
+    padding: 0 1.0rem;
+  }
+
+  footer {
+    padding-top: 2.0rem;
+  }
+
+  .footer-inner {
+    padding: 0 1.0rem 1.5rem;
+  }
+
+}
