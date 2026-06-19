@@ -169,8 +169,7 @@ The table below provides a realistic estimated budget for developing, hosting an
 
 ## Deployment
 
-> **Live URL:** `https://yoursitename.netlify.app/`
-> *(Replace `yoursitename` with the actual subdomain after deploying to Netlify, or with `https://yourusername.github.io/repo-name/` if deploying via GitHub Pages.)*
+> **Live URL:**  https://angel-create-dot.github.io/WEDE-5020/
 
 Once deployed, update the live URL in the following three files so canonical tags, the sitemap and robots.txt all point to the correct live address:
 1. **All 5 HTML files** — update the `<link rel="canonical" href="...">` tag in the `<head>` of each page.
