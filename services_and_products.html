@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     PAGE: Services and Products (services_and_products.html)
+     DESCRIPTION: Details the full range of services and products
+     offered by Booking.com, including accommodation, flights,
+     car rentals, activities, catering and wellness services.
+     A YouTube embed video is included to showcase the platform.
+     AUTHOR: [Angel Qosha]
+     STUDENT NUMBER: [St10533417]
+     MODULE: WEDE5020
+     ============================================================ -->
+
+<head>
+  <!-- Sets the character encoding so all characters display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on mobile and tablet screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description for search engines (SEO) -->
+  <meta name="description" content="Explore all Booking.com services:
+  accommodation, flights, car rentals, activities, catering and wellness.
+  Book everything for your trip in one place.">
+
+  <!-- Keywords to help search engines find this page (SEO) -->
+  <meta name="keywords" content="Booking.com services, accommodation,
+  flights, car rental, activities, catering, massage, wellness, travel">
+
+  <!-- Title shown in the browser tab -->
+  <title>Services | Booking.com</title>
+
+  <!-- Canonical tag tells search engines this is the preferred URL for this page (avoids duplicate-content issues) -->
+  <link rel="canonical" href="https://yoursitename.netlify.app/services_and_products.html">
+
+  <!-- Links the external CSS stylesheet to this HTML page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER: Same header used on all five pages.
+       "Services" has class="active" to highlight the current page.
+       ============================================================ -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Logo linking back to the homepage -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Booking.com Logo" width="150">
+        </a>
+      </div>
+
+      <!-- ========================================================
+           NAVIGATION: Services is the active page here.
+           ======================================================== -->
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <!-- Services is highlighted as the current active page -->
+          <li><a href="services_and_products.html" class="active">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN: The unique content for the Services page.
+       ============================================================ -->
+  <main>
+
+    <!-- ==========================================================
+         PAGE BANNER: A full-width heading section that introduces
+         the services and products page to the visitor.
+         ========================================================== -->
+    <section class="page-banner">
+      <h1>Our Services &amp; Products</h1>
+      <p>Everything you need for the perfect trip — all in one place.</p>
+    </section>
+
+    <!-- ==========================================================
+         SERVICES DETAIL SECTION: Each service is displayed as a
+         row with an image on the left and descriptive text on the
+         right, alternating layout for visual variety.
+         ========================================================== -->
+    <section class="services-detail">
+
+      <!-- ========================================================
+           SEARCH/FILTER: Lets visitors type a keyword to instantly
+           filter which service panels are shown. Handled by
+           main.js — matches against each service's title and
+           description text.
+           ======================================================== -->
+      <div class="services-search">
+        <label for="serviceSearch" class="sr-only">Search services</label>
+        <input type="text"
+               id="serviceSearch"
+               placeholder="Search services (e.g. flights, spa, tours)..."
+               aria-label="Search services">
+        <p id="serviceSearchCount" class="search-count"></p>
+      </div>
+
+      <!-- ========================================================
+           ACCORDION: Each service is a collapsible panel. Clicking
+           a header toggles that panel open/closed via main.js.
+           Built with button elements and aria-expanded for
+           accessibility, and progressively enhanced — panels are
+           visible by default if JavaScript fails to load.
+           ======================================================== -->
+      <div class="accordion" id="servicesAccordion">
+
+        <!-- Service 1: Accommodation -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-trigger" aria-expanded="true" aria-controls="panel-accommodation">
+              Accommodation
+              <span class="accordion-icon">&#9662;</span>
+            </button>
+          </h2>
+          <div class="accordion-panel" id="panel-accommodation">
+            <div class="service-row">
+              <div class="service-img">
+                <img src="images/accomodation.jpg"
+                     alt="Comfortable hotel room showing accommodation options on Booking.com">
+              </div>
+              <div class="service-desc">
+                <p>Search and book from over 28 million properties worldwide,
+                   including hotels, guesthouses, self-catering apartments,
+                   resorts, hostels and private holiday homes. Most listings
+                   offer free cancellation so you can book with confidence.</p>
+                <ul>
+                  <li>Hotels and resorts</li>
+                  <li>Guesthouses and B&amp;Bs</li>
+                  <li>Self-catering apartments</li>
+                  <li>Hostels and budget stays</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Flights -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-flights">
+              Flights
+              <span class="accordion-icon">&#9662;</span>
+            </button>
+          </h2>
+          <div class="accordion-panel" id="panel-flights" hidden>
+            <div class="service-row reverse">
+              <div class="service-img">
+                <img src="images/flight.jpg"
+                     alt="Aeroplane in flight representing Booking.com flight booking service">
+              </div>
+              <div class="service-desc">
+                <p>Compare flights from hundreds of airlines around the world
+                   and book your tickets at the best available price. Our
+                   flight search covers economy, business and first class
+                   across thousands of global routes.</p>
+                <ul>
+                  <li>Domestic and international flights</li>
+                  <li>One-way and return tickets</li>
+                  <li>Economy, business and first class</li>
+                  <li>Price comparison across airlines</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Activities -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-activities">
+              Activities &amp; Experiences
+              <span class="accordion-icon">&#9662;</span>
+            </button>
+          </h2>
+          <div class="accordion-panel" id="panel-activities" hidden>
+            <div class="service-row">
+              <div class="service-img">
+                <img src="images/activities.jpg"
+                     alt="Travellers taking part in outdoor activities booked through Booking.com">
+              </div>
+              <div class="service-desc">
+                <p>Enhance your trip with unforgettable local experiences.
+                   Browse thousands of tours, excursions, activities and
+                   cultural events available at your destination — from
+                   city walking tours to adventure sports and cooking classes.</p>
+                <ul>
+                  <li>Guided city tours</li>
+                  <li>Adventure sports and outdoor activities</li>
+                  <li>Cultural experiences and workshops</li>
+                  <li>Day trips and excursions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Catering -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-catering">
+              Catering &amp; Dining
+              <span class="accordion-icon">&#9662;</span>
+            </button>
+          </h2>
+          <div class="accordion-panel" id="panel-catering" hidden>
+            <div class="service-row reverse">
+              <div class="service-img">
+                <img src="images/catering.jpg"
+                     alt="Quality catering and dining options available through Booking.com properties">
+              </div>
+              <div class="service-desc">
+                <p>Many Booking.com properties include catering options
+                   ranging from continental breakfast to full board packages.
+                   You can also discover and book restaurant experiences and
+                   food tours at your destination through our platform.</p>
+                <ul>
+                  <li>Bed and breakfast packages</li>
+                  <li>Half-board and full-board options</li>
+                  <li>All-inclusive resort packages</li>
+                  <li>Restaurant recommendations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Wellness and Massage -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-wellness">
+              Wellness &amp; Spa
+              <span class="accordion-icon">&#9662;</span>
+            </button>
+          </h2>
+          <div class="accordion-panel" id="panel-wellness" hidden>
+            <div class="service-row">
+              <div class="service-img">
+                <img src="images/massage.jpg"
+                     alt="Relaxing spa and wellness services available at Booking.com hotel properties">
+              </div>
+              <div class="service-desc">
+                <p>Relax and recharge with spa and wellness services available
+                   at selected Booking.com properties. Filter your accommodation
+                   search to find hotels with on-site spas, swimming pools,
+                   gyms and wellness centres included.</p>
+                <ul>
+                  <li>Spa and massage treatments</li>
+                  <li>Swimming pools and gym facilities</li>
+                  <li>Yoga and meditation sessions</li>
+                  <li>Beauty and grooming services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================
+         VIDEO SECTION: An embedded YouTube video that gives
+         visitors an overview of how Booking.com works and what
+         the platform offers to travellers.
+         ========================================================== -->
+    <section class="video-section">
+      <h2>See How Booking.com Works</h2>
+      <p>Watch the video below to learn more about our platform
+         and how to make the most of your booking experience.</p>
+
+      <!-- Embedded YouTube video with correct iframe attributes -->
+      <div class="video-wrapper">
+        <iframe width="560"
+                height="315"
+                src="https://www.youtube.com/embed/DU8TqU4I5mc?si=_VnNyUJ0riwl2uzr"
+                title="Booking.com platform overview video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER: Same footer on all five pages.
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Footer Column 1: Mini contact form -->
+      <div class="footer-contact">
+        <h4>Quick Enquiry</h4>
+        <p>Send us a message</p>
+        <form class="footer-form" onsubmit="submitFooterForm(event, this)" novalidate>
+          <input type="text" name="footerName" placeholder="Full Name" required>
+          <input type="email" name="footerEmail" placeholder="Email Address" required>
+          <textarea name="footerMessage" placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit">Submit</button>
+          <p class="footer-form-response" style="display:none;">Thanks! We will be in touch shortly.</p>
+        </form>
+      </div>
+
+      <!-- Footer Column 2: Sitemap -->
+      <div class="footer-sitemap">
+        <h4>Sitemap</h4>
+        <p>All our pages</p>
+        <ul>
+          <li><a href="index.html">- Home</a></li>
+          <li><a href="about_us.html">- About Us</a></li>
+          <li><a href="services_and_products.html">- Services</a></li>
+          <li><a href="enquiry.html">- Enquiry</a></li>
+          <li><a href="contact_us.html">- Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Contact details -->
+      <div class="footer-info">
+        <img src="images/logo.png" alt="Booking.com Logo" width="120">
+        <p>&#128222; 086 020 9215</p>
+        <p>&#9993; support@booking.com</p>
+        <p>&#128205; Oosterdokskade 163, Amsterdam</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Booking.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

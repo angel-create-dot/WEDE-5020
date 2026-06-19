@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     PAGE: Contact Us (contact_us.html)
+     DESCRIPTION: Shows Booking.com contact details, trading hours
+     and four embedded Google Maps showing global office locations
+     (Amsterdam, Johannesburg, Jeddah and Seville). Also includes
+     a general contact form. The brief requires more than 1 location
+     on the contact page — four maps satisfy this requirement.
+     AUTHOR: [Angel Qosha]
+     STUDENT NUMBER: [St10533417]
+     MODULE: WEDE5020
+     ============================================================ -->
+
+<head>
+  <!-- Sets the character encoding so all characters display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on mobile and tablet screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description for search engines (SEO) -->
+  <meta name="description" content="Contact Booking.com. Phone: 086 020 9215.
+  Email: support@booking.com. Head office in Amsterdam, Netherlands.
+  Global offices in Johannesburg, Jeddah and Seville.">
+
+  <!-- Keywords to help search engines find this page (SEO) -->
+  <meta name="keywords" content="contact Booking.com, office locations,
+  phone number, email, Amsterdam, Johannesburg, support, customer service">
+
+  <!-- Title shown in the browser tab -->
+  <title>Contact Us | Booking.com</title>
+
+  <!-- Canonical tag tells search engines this is the preferred URL for this page (avoids duplicate-content issues) -->
+  <link rel="canonical" href="https://yoursitename.netlify.app/contact_us.html">
+
+  <!-- Links the external CSS stylesheet to this HTML page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for the interactive office locations map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER: Same header used on all five pages.
+       "Contact Us" has class="active" to highlight the current page.
+       ============================================================ -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Logo linking back to the homepage -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Booking.com Logo" width="150">
+        </a>
+      </div>
+
+      <!-- ========================================================
+           NAVIGATION: Contact Us is the active page here.
+           ======================================================== -->
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services_and_products.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <!-- Contact Us is highlighted as the current active page -->
+          <li><a href="contact_us.html" class="active">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN: The unique content for the Contact Us page.
+       ============================================================ -->
+  <main>
+
+    <!-- ==========================================================
+         CONTACT DETAILS SECTION: Two-column layout showing the
+         main contact information on the left and trading hours
+         on the right.
+         ========================================================== -->
+    <section class="contact-section">
+
+      <!-- Left column: contact details heading and information -->
+      <div class="contact-info">
+        <h1>Reach Our Team</h1>
+        <!-- Phone number with clickable call link -->
+        <p>Call us on:
+          <a href="tel:0860209215">
+            <strong>086 020 9215</strong>
+          </a>
+          &#128222;
+        </p>
+        <!-- Email address with clickable mail link -->
+        <p>Email us:
+          <a href="mailto:support@booking.com">
+            <strong>support@booking.com</strong>
+          </a>
+          &#9993;
+        </p>
+        <!-- Trading hours -->
+        <h3>Trading Hours</h3>
+        <p>24 hours a day, 7 days a week — our global support team
+           is always available to assist you.</p>
+      </div>
+
+      <!-- Right column: Head office address details -->
+      <div class="contact-address">
+        <h3>Head Office</h3>
+        <p>&#128205; Oosterdokskade 163,<br>
+           1011 DL Amsterdam,<br>
+           Netherlands</p>
+        <h3>South Africa Office</h3>
+        <p>&#128205; Booking.com JHB,<br>
+           Sandton, Johannesburg,<br>
+           South Africa</p>
+      </div>
+
+    </section>
+
+    <!-- ==========================================================
+         INTERACTIVE MAP SECTION: A single Leaflet map plotting
+         all four global office locations together with clickable
+         markers. Gives visitors a fully interactive (pan/zoom/
+         click) overview before the individual embeds below.
+         ========================================================== -->
+    <section class="interactive-map-section">
+      <h2>All Offices at a Glance</h2>
+      <p>Click any marker for details, or scroll to zoom and explore.</p>
+      <div id="officeMap" class="office-map" aria-label="Interactive map of Booking.com office locations"></div>
+    </section>
+
+    <!-- ==========================================================
+         MAPS SECTION: Four embedded Google Maps showing Booking.com
+         office locations around the world. The brief requires more
+         than one location to be shown on the contact page.
+         ========================================================== -->
+    <section class="maps-section">
+      <h2>Our Global Locations</h2>
+
+      <!-- Grid of four maps -->
+      <div class="maps-grid">
+
+        <!-- Map 1: Amsterdam Head Office -->
+        <div class="map-item">
+          <h3>Amsterdam — Head Office</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.7015824215778!2d4.907380376246581!3d52.375830872023734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099590ae1d19%3A0x37f9e7921bb19b73!2sBooking.com!5e0!3m2!1sen!2sza!4v1776683034171!5m2!1sen!2sza"
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Booking.com head office location in Amsterdam Netherlands">
+          </iframe>
+          <p class="map-label">Oosterdokskade 163, 1011 DL Amsterdam</p>
+        </div>
+
+        <!-- Map 2: Johannesburg Office -->
+        <div class="map-item">
+          <h3>Johannesburg — SA Office</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.6472791848755!2d28.056765774785806!3d-26.110430277134476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95732b57103fc3%3A0x460594ce987d0e73!2sBooking.com%20JHB!5e0!3m2!1sen!2sza!4v1776683065142!5m2!1sen!2sza"
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Booking.com Johannesburg South Africa office location">
+          </iframe>
+          <p class="map-label">Sandton, Johannesburg, South Africa</p>
+        </div>
+
+        <!-- Map 3: Jeddah Office -->
+        <div class="map-item">
+          <h3>Jeddah — Middle East Office</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.474207054843!2d39.140650074622975!3d21.56740528022017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3dabcd8486ce9%3A0x7bb5b63347fd957b!2sBooking.com!5e0!3m2!1sen!2sza!4v1776683093782!5m2!1sen!2sza"
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Booking.com Jeddah Middle East office location">
+          </iframe>
+          <p class="map-label">Jeddah, Saudi Arabia</p>
+        </div>
+
+        <!-- Map 4: Seville Office -->
+        <div class="map-item">
+          <h3>Seville — Europe Office</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12680.129899960646!2d-6.002862669261056!3d37.38906426620641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126d006803403d%3A0xc2fdaf8802ce2088!2sBooking.%20Com!5e0!3m2!1sen!2sza!4v1776683151325!5m2!1sen!2sza"
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Booking.com Seville Europe office location">
+          </iframe>
+          <p class="map-label">Seville, Spain</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================
+         CONTACT FORM SECTION: A general contact form allowing
+         visitors to send a direct message to Booking.com support.
+         ========================================================== -->
+    <section class="contact-form-section">
+      <h2>Send Us a Message</h2>
+
+      <!-- ========================================================
+           CONTACT FORM: Collects Name, Email, Contact Number and
+           Message. JavaScript in main.js validates the form.
+           ======================================================== -->
+      <form id="contactForm" onsubmit="submitContact(event)" novalidate>
+
+        <!-- Name input -->
+        <label for="contactName">Name</label>
+        <input type="text"
+               id="contactName"
+               name="contactName"
+               placeholder="Your full name"
+               required>
+        <span class="error-msg" id="contactNameError"></span>
+
+        <!-- Email input -->
+        <label for="contactEmail">Email</label>
+        <input type="email"
+               id="contactEmail"
+               name="contactEmail"
+               placeholder="Your email address"
+               required>
+        <span class="error-msg" id="contactEmailError"></span>
+
+        <!-- Contact number input -->
+        <label for="contactPhone">Contact Number</label>
+        <input type="tel"
+               id="contactPhone"
+               name="contactPhone"
+               placeholder="Your phone number">
+
+        <!-- Message textarea -->
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage"
+                  name="contactMessage"
+                  placeholder="Your message"
+                  rows="5"
+                  required></textarea>
+        <span class="error-msg" id="contactMessageError"></span>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn">Send Message &#8594;</button>
+
+      </form>
+
+      <!-- Confirmation shown after successful form submission -->
+      <div id="contactResponse" class="response-message" style="display:none;">
+        <h3>&#10003; Message Sent!</h3>
+        <p>Thank you for contacting Booking.com. We will respond within
+           24 hours. For urgent queries please call 086 020 9215.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER: Same footer on all five pages.
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Footer Column 1: Mini contact form -->
+      <div class="footer-contact">
+        <h4>Quick Enquiry</h4>
+        <p>Send us a message</p>
+        <form class="footer-form" onsubmit="submitFooterForm(event, this)" novalidate>
+          <input type="text" name="footerName" placeholder="Full Name" required>
+          <input type="email" name="footerEmail" placeholder="Email Address" required>
+          <textarea name="footerMessage" placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit">Submit</button>
+          <p class="footer-form-response" style="display:none;">Thanks! We will be in touch shortly.</p>
+        </form>
+      </div>
+
+      <!-- Footer Column 2: Sitemap -->
+      <div class="footer-sitemap">
+        <h4>Sitemap</h4>
+        <p>All our pages</p>
+        <ul>
+          <li><a href="index.html">- Home</a></li>
+          <li><a href="about_us.html">- About Us</a></li>
+          <li><a href="services_and_products.html">- Services</a></li>
+          <li><a href="enquiry.html">- Enquiry</a></li>
+          <li><a href="contact_us.html">- Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Contact details -->
+      <div class="footer-info">
+        <img src="images/logo.png" alt="Booking.com Logo" width="120">
+        <p>&#128222; 086 020 9215</p>
+        <p>&#9993; support@booking.com</p>
+        <p>&#128205; Oosterdokskade 163, Amsterdam</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Booking.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for the interactive office locations map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

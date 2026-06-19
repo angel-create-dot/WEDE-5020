@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     PAGE: Enquiry (enquiry.html)
+     DESCRIPTION: Allows visitors to submit a travel or booking
+     enquiry to Booking.com. Two-column layout with contact
+     details on the left and the enquiry form on the right.
+     JavaScript in main.js validates the form before submission.
+      AUTHOR: [Angel Qosha]
+     STUDENT NUMBER: [St10533417]
+     MODULE: WEDE5020
+     ============================================================ -->
+
+<head>
+  <!-- Sets the character encoding so all characters display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on mobile and tablet screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description for search engines (SEO) -->
+  <meta name="description" content="Submit a travel or booking enquiry
+  to Booking.com. Our support team is available 24/7 to assist with
+  hotel, flight and activity bookings.">
+
+  <!-- Keywords to help search engines find this page (SEO) -->
+  <meta name="keywords" content="Booking.com enquiry, contact form,
+  travel enquiry, booking help, customer support, hotel enquiry">
+
+  <!-- Title shown in the browser tab -->
+  <title>Enquiry | Booking.com</title>
+
+  <!-- Canonical tag tells search engines this is the preferred URL for this page (avoids duplicate-content issues) -->
+  <link rel="canonical" href="https://yoursitename.netlify.app/enquiry.html">
+
+  <!-- Links the external CSS stylesheet to this HTML page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER: Same header used on all five pages.
+       "Enquiry" has class="active" to highlight the current page.
+       ============================================================ -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Logo linking back to the homepage -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Booking.com Logo" width="150">
+        </a>
+      </div>
+
+      <!-- ========================================================
+           NAVIGATION: Enquiry is the active page here.
+           ======================================================== -->
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services_and_products.html">Services</a></li>
+          <!-- Enquiry is highlighted as the current active page -->
+          <li><a href="enquiry.html" class="active">Enquiry</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN: The unique content for the Enquiry page.
+       ============================================================ -->
+  <main>
+
+    <!-- ==========================================================
+         ENQUIRY SECTION: Two-column layout. Left column shows the
+         "Get In Touch" heading with contact details and operating
+         hours. Right column contains the enquiry form with
+         Full Name, Email, Subject and Message fields.
+         ========================================================== -->
+    <section class="enquiry-section">
+
+      <!-- Left column: GET IN TOUCH details -->
+      <div class="enquiry-info">
+        <!-- Large heading as shown in the wireframe -->
+        <h1>GET IN<br>TOUCH</h1>
+        <!-- Phone number with icon -->
+        <p>&#128222; <strong>086 020 9215</strong></p>
+        <!-- Email address with icon -->
+        <p>&#9993; <strong>support@booking.com</strong></p>
+        <!-- Trading hours -->
+        <p>&#128336; Available 24 hours, 7 days a week</p>
+      </div>
+
+      <!-- Right column: Enquiry form -->
+      <div class="enquiry-form">
+
+        <!-- ======================================================
+             ENQUIRY FORM: Collects Full Name, Email, Subject and
+             Message. JavaScript in main.js validates all fields
+             before allowing submission. On successful submission,
+             the form is hidden and a confirmation message appears.
+             ====================================================== -->
+        <form id="enquiryForm" onsubmit="submitEnquiry(event)" novalidate>
+
+          <!-- Full Name input field -->
+          <label for="fullName">Full Name</label>
+          <input type="text"
+                 id="fullName"
+                 name="fullName"
+                 placeholder="Your full name"
+                 required>
+          <!-- Error message shown by JavaScript if field is empty -->
+          <span class="error-msg" id="fullNameError"></span>
+
+          <!-- Email input field -->
+          <label for="email">Email Address</label>
+          <input type="email"
+                 id="email"
+                 name="email"
+                 placeholder="Your email address"
+                 required>
+          <!-- Error message shown by JavaScript if email is invalid -->
+          <span class="error-msg" id="emailError"></span>
+
+          <!-- Subject input field -->
+          <label for="subject">Subject</label>
+          <input type="text"
+                 id="subject"
+                 name="subject"
+                 placeholder="Enquiry subject (e.g. Hotel booking)"
+                 required>
+          <!-- Error message shown by JavaScript if field is empty -->
+          <span class="error-msg" id="subjectError"></span>
+
+          <!-- Message textarea -->
+          <label for="message">Message</label>
+          <textarea id="message"
+                    name="message"
+                    placeholder="Describe your enquiry in detail"
+                    rows="5"
+                    required></textarea>
+          <!-- Error message shown by JavaScript if field is empty -->
+          <span class="error-msg" id="messageError"></span>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn">Submit Enquiry &#8594;</button>
+
+        </form>
+
+        <!-- ======================================================
+             CONFIRMATION MESSAGE: Hidden by default. JavaScript
+             shows this block after the form is successfully
+             submitted, confirming the enquiry was received.
+             ====================================================== -->
+        <div id="enquiryResponse" class="response-message" style="display:none;">
+          <h3>&#10003; Enquiry Submitted!</h3>
+          <p>Thank you for contacting Booking.com. Our support team
+             will respond to your enquiry within 24 hours.</p>
+          <p>For urgent assistance, call us directly on
+             <strong>086 020 9215</strong>.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER: Same footer on all five pages.
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Footer Column 1: Mini contact form -->
+      <div class="footer-contact">
+        <h4>Quick Enquiry</h4>
+        <p>Send us a message</p>
+        <form class="footer-form" onsubmit="submitFooterForm(event, this)" novalidate>
+          <input type="text" name="footerName" placeholder="Full Name" required>
+          <input type="email" name="footerEmail" placeholder="Email Address" required>
+          <textarea name="footerMessage" placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit">Submit</button>
+          <p class="footer-form-response" style="display:none;">Thanks! We will be in touch shortly.</p>
+        </form>
+      </div>
+
+      <!-- Footer Column 2: Sitemap -->
+      <div class="footer-sitemap">
+        <h4>Sitemap</h4>
+        <p>All our pages</p>
+        <ul>
+          <li><a href="index.html">- Home</a></li>
+          <li><a href="about_us.html">- About Us</a></li>
+          <li><a href="services_and_products.html">- Services</a></li>
+          <li><a href="enquiry.html">- Enquiry</a></li>
+          <li><a href="contact_us.html">- Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Contact details -->
+      <div class="footer-info">
+        <img src="images/logo.png" alt="Booking.com Logo" width="120">
+        <p>&#128222; 086 020 9215</p>
+        <p>&#9993; support@booking.com</p>
+        <p>&#128205; Oosterdokskade 163, Amsterdam</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Booking.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript file handles form validation and submission -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

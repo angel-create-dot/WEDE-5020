@@ -1,0 +1,12 @@
+# ================================================================
+# robots.txt — Booking.com (student project)
+# Tells search engine crawlers which pages they may index.
+# All five pages are public-facing and safe to crawl, so we allow
+# everything and simply point crawlers to the sitemap.
+# ================================================================
+
+User-agent: *
+Allow: /
+
+# Location of the sitemap (update the domain once deployed)
+Sitemap: https://yoursitename.netlify.app/sitemap.xml

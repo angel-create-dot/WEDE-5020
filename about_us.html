@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     PAGE: About Us (about_us.html)
+     DESCRIPTION: Tells the story of Booking.com. Features the
+     organisation's history, mission, vision and key team members.
+    AUTHOR: [Angel Qosha]
+     STUDENT NUMBER: [St10533417]
+     MODULE: WEDE5020
+     ============================================================ -->
+
+<head>
+  <!-- Sets the character encoding so all characters display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on mobile and tablet screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description for search engines (SEO) -->
+  <meta name="description" content="Learn about Booking.com — our history,
+  mission, vision and the team behind the world's leading travel platform,
+  founded in Amsterdam in 1996.">
+
+  <!-- Keywords to help search engines find this page (SEO) -->
+  <meta name="keywords" content="about Booking.com, company history,
+  mission, vision, team, Amsterdam, travel platform, online booking">
+
+  <!-- Title shown in the browser tab -->
+  <title>About Us | Booking.com</title>
+
+  <!-- Canonical tag tells search engines this is the preferred URL for this page (avoids duplicate-content issues) -->
+  <link rel="canonical" href="https://yoursitename.netlify.app/about_us.html">
+
+  <!-- Links the external CSS stylesheet to this HTML page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER: Same header used on all five pages.
+       "About Us" has class="active" to highlight the current page.
+       ============================================================ -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Logo linking back to the homepage -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Booking.com Logo" width="150">
+        </a>
+      </div>
+
+      <!-- ========================================================
+           NAVIGATION: About Us is the active page here.
+           ======================================================== -->
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- About Us is highlighted as the current active page -->
+          <li><a href="about_us.html" class="active">About Us</a></li>
+          <li><a href="services_and_products.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN: The unique content for the About Us page.
+       ============================================================ -->
+  <main>
+
+    <!-- ==========================================================
+         ABOUT SECTION: Two-column layout. Left side has a hotel
+         image; right side has the company history, mission,
+         vision and team members list.
+         ========================================================== -->
+    <section class="about-section">
+
+      <!-- Left column: supporting image -->
+      <div class="about-image">
+        <img src="images/hotel_room.jpg"
+             alt="A luxury hotel room available to book through Booking.com">
+      </div>
+
+      <!-- Right column: company information -->
+      <div class="about-text">
+
+        <!-- Page heading -->
+        <h1>About Us</h1>
+
+        <!-- Organisation history paragraphs -->
+        <h2>Our History</h2>
+        <p>Booking.com was founded in Amsterdam, Netherlands, in 1996, and
+           was initially known as Booking.nl — a platform focused exclusively
+           on hotel reservations within the Netherlands. Over the following
+           decades, the platform expanded rapidly to become one of the world's
+           largest online travel agencies, offering accommodation in more than
+           220 countries and territories.</p>
+
+        <p>Today, Booking.com is part of Booking Holdings Inc. and connects
+           millions of travellers with over 28 million accommodation listings
+           worldwide, ranging from budget hostels and guesthouses to five-star
+           luxury resorts and private holiday homes.</p>
+
+        <!-- Mission statement -->
+        <h2>Our Mission</h2>
+        <p>To make it easier for everyone to experience the world by providing
+           a trusted, easy-to-use platform where travellers can find and book
+           the accommodation and travel services that best suit their needs.</p>
+
+        <!-- Vision statement -->
+        <h2>Our Vision</h2>
+        <p>To afford every traveller the opportunity to use technology to
+           conveniently discover and book hotels, apartments and experiences
+           across the globe — at the best possible price.</p>
+
+        <!-- Key team members list -->
+        <h2>Key Team Members</h2>
+        <ol>
+          <li>Glenn Fogel — Chief Executive Officer (CEO)</li>
+          <li>James Waters — Chief People Officer</li>
+          <li>Rob Francis — Chief Information Officer</li>
+          <li>Matthias Schmid — Chief Commercial Officer</li>
+        </ol>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================
+         GALLERY SECTION: A grid of property and travel photos.
+         Clicking any thumbnail opens it full-size in a lightbox
+         overlay, with Next/Previous controls and a close button.
+         Handled entirely by main.js (openLightbox / closeLightbox).
+         ========================================================== -->
+    <section class="gallery-section">
+      <h2>Gallery</h2>
+      <p>A glimpse at the properties and experiences travellers book
+         through Booking.com every day.</p>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <button class="gallery-item" data-index="0">
+          <img src="images/hotel_room.jpg" alt="Luxury hotel room interior">
+        </button>
+        <button class="gallery-item" data-index="1">
+          <img src="images/accomodation.jpg" alt="Hotel accommodation exterior view">
+        </button>
+        <button class="gallery-item" data-index="2">
+          <img src="images/flight.jpg" alt="Aeroplane in flight">
+        </button>
+        <button class="gallery-item" data-index="3">
+          <img src="images/activities.jpg" alt="Travellers enjoying outdoor activities">
+        </button>
+        <button class="gallery-item" data-index="4">
+          <img src="images/catering.jpg" alt="Catering and dining setup">
+        </button>
+        <button class="gallery-item" data-index="5">
+          <img src="images/massage.jpg" alt="Spa and wellness massage treatment">
+        </button>
+        <button class="gallery-item" data-index="6">
+          <img src="images/hero_image.jpg" alt="Scenic travel destination">
+        </button>
+        <button class="gallery-item" data-index="7">
+          <img src="images/fahim-reza-87GJDfPQNw0-unsplash.jpg" alt="Travel and tourism scene">
+        </button>
+      </div>
+
+      <!-- ========================================================
+           LIGHTBOX OVERLAY: Hidden by default. Shown by main.js
+           when a gallery thumbnail is clicked. Displays the full
+           size image with Previous/Next/Close controls.
+           ======================================================== -->
+      <div class="lightbox" id="lightbox" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">&#10005;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER: Same footer on all five pages.
+       Three columns: mini contact form, sitemap, contact details.
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Footer Column 1: Mini contact form -->
+      <div class="footer-contact">
+        <h4>Quick Enquiry</h4>
+        <p>Send us a message</p>
+        <form class="footer-form" onsubmit="submitFooterForm(event, this)" novalidate>
+          <input type="text" name="footerName" placeholder="Full Name" required>
+          <input type="email" name="footerEmail" placeholder="Email Address" required>
+          <textarea name="footerMessage" placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit">Submit</button>
+          <p class="footer-form-response" style="display:none;">Thanks! We will be in touch shortly.</p>
+        </form>
+      </div>
+
+      <!-- Footer Column 2: Sitemap -->
+      <div class="footer-sitemap">
+        <h4>Sitemap</h4>
+        <p>All our pages</p>
+        <ul>
+          <li><a href="index.html">- Home</a></li>
+          <li><a href="about_us.html">- About Us</a></li>
+          <li><a href="services_and_products.html">- Services</a></li>
+          <li><a href="enquiry.html">- Enquiry</a></li>
+          <li><a href="contact_us.html">- Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Contact details -->
+      <div class="footer-info">
+        <img src="images/logo.png" alt="Booking.com Logo" width="120">
+        <p>&#128222; 086 020 9215</p>
+        <p>&#9993; support@booking.com</p>
+        <p>&#128205; Oosterdokskade 163, Amsterdam</p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Booking.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

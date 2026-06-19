@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     PAGE: Homepage (index.html)
+     DESCRIPTION: The main landing page for Booking.com. Includes
+     a hero banner, a brief introduction section, a featured
+     services grid, and a consistent header and footer across
+     all five pages of the website.
+     AUTHOR: [Angel Qosha]
+     STUDENT NUMBER: [St10533417]
+     MODULE: WEDE5020
+     ============================================================ -->
+
+<head>
+  <!-- Sets the character encoding so all characters display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page scale correctly on mobile and tablet screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description shown in Google search results (SEO) -->
+  <meta name="description" content="Booking.com - Find and book hotels,
+  flights, car rentals and activities worldwide. Best prices guaranteed
+  with free cancellation on most bookings.">
+
+  <!-- Keywords to help search engines find this page (SEO) -->
+  <meta name="keywords" content="Booking.com, book hotels, flights,
+  accommodation, car rentals, activities, travel, holidays, best price">
+
+  <!-- Title shown in the browser tab -->
+  <title>Home | Booking.com</title>
+
+  <!-- Canonical tag tells search engines this is the preferred URL for this page (avoids duplicate-content issues) -->
+  <link rel="canonical" href="https://yoursitename.netlify.app/index.html">
+
+  <!-- Links the external CSS stylesheet to this HTML page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts: Poppins for headings, Open Sans for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER: Contains the Booking.com logo on the left and the
+       main navigation menu on the right. This header appears on
+       ALL five pages of the website.
+       ============================================================ -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Logo - links back to the homepage -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Booking.com Logo" width="150">
+        </a>
+      </div>
+
+      <!-- ========================================================
+           NAVIGATION MENU: Links to all 5 pages of the website.
+           class="active" highlights the current page in the menu.
+           ======================================================== -->
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul>
+          <!-- Home is highlighted as the active page -->
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services_and_products.html">Services</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN: The unique content for the homepage only.
+       ============================================================ -->
+  <main>
+
+    <!-- ==========================================================
+         HERO SECTION: Full-width banner image with a headline,
+         a tagline and a call-to-action button that links to the
+         services page.
+         ========================================================== -->
+    <section class="hero">
+      <img src="images/hero_image.jpg"
+           alt="Travellers enjoying a beautiful hotel destination booked through Booking.com">
+      <div class="hero-text">
+        <h1>Your Journey Starts Here</h1>
+        <p>Hotels, flights, car rentals and activities — all in one place.</p>
+        <!-- CTA button links to the services page -->
+        <a href="services_and_products.html" class="btn">Explore Our Services &#8594;</a>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         INTRODUCTION SECTION: A brief welcome paragraph that
+         explains what Booking.com offers to travellers.
+         ========================================================== -->
+    <section class="intro-section">
+      <h2>Welcome to Booking.com</h2>
+      <p>Booking.com is one of the world's leading online travel platforms,
+         connecting travellers with over 28 million accommodation listings
+         across more than 220 countries and territories. Whether you are
+         looking for a luxury hotel, a cosy guesthouse, or a self-catering
+         apartment, Booking.com makes it simple to find and book the
+         perfect stay — at the best possible price.</p>
+      <p>Beyond accommodation, we also help you book flights, car rentals,
+         airport taxis, and unique travel experiences so that every part of
+         your trip is covered in one place.</p>
+    </section>
+
+    <!-- ==========================================================
+         FEATURED SERVICES SECTION: A 3-column grid showcasing
+         the main service categories offered by Booking.com.
+         Each card has an image, a title and a short description.
+         ========================================================== -->
+    <section class="featured-services">
+      <h2>What We Offer</h2>
+
+      <div class="services-grid">
+
+        <!-- Service Card 1: Accommodation -->
+        <div class="service-card">
+          <img src="images/accomodation.jpg"
+               alt="Comfortable hotel room available to book on Booking.com">
+          <h3>Accommodation</h3>
+          <p>Choose from hotels, guesthouses, apartments, resorts and
+             hostels across the globe — with free cancellation on
+             most listings.</p>
+          <a href="services_and_products.html" class="btn-small">Learn More</a>
+        </div>
+
+        <!-- Service Card 2: Flights -->
+        <div class="service-card">
+          <img src="images/flight.jpg"
+               alt="Aeroplane in the sky representing flight bookings on Booking.com">
+          <h3>Flights</h3>
+          <p>Compare flights from hundreds of airlines and book
+             your tickets directly — with no hidden fees and the
+             best fares guaranteed.</p>
+          <a href="services_and_products.html" class="btn-small">Learn More</a>
+        </div>
+
+        <!-- Service Card 3: Activities -->
+        <div class="service-card">
+          <img src="images/activities.jpg"
+               alt="Travellers enjoying local activities and excursions booked through Booking.com">
+          <h3>Activities</h3>
+          <p>Discover tours, experiences and activities at your
+             destination — from city sightseeing to adventure sports
+             and cultural excursions.</p>
+          <a href="services_and_products.html" class="btn-small">Learn More</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER: Appears on ALL five pages of the website.
+       Contains three columns:
+       1. A mini contact form
+       2. A sitemap with links to all pages
+       3. Company contact details
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Footer Column 1: Mini contact form for quick messages -->
+      <div class="footer-contact">
+        <h4>Quick Enquiry</h4>
+        <p>Send us a message</p>
+        <form class="footer-form" onsubmit="submitFooterForm(event, this)" novalidate>
+          <input type="text"
+                 name="footerName"
+                 placeholder="Full Name"
+                 required>
+          <input type="email"
+                 name="footerEmail"
+                 placeholder="Email Address"
+                 required>
+          <textarea name="footerMessage"
+                    placeholder="Your Message"
+                    rows="3"
+                    required></textarea>
+          <button type="submit">Submit</button>
+          <p class="footer-form-response" style="display:none;">Thanks! We will be in touch shortly.</p>
+        </form>
+      </div>
+
+      <!-- Footer Column 2: Sitemap listing all five pages -->
+      <div class="footer-sitemap">
+        <h4>Sitemap</h4>
+        <p>All our pages</p>
+        <ul>
+          <li><a href="index.html">- Home</a></li>
+          <li><a href="about_us.html">- About Us</a></li>
+          <li><a href="services_and_products.html">- Services</a></li>
+          <li><a href="enquiry.html">- Enquiry</a></li>
+          <li><a href="contact_us.html">- Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3: Company contact details -->
+      <div class="footer-info">
+        <img src="images/logo.png" alt="Booking.com Logo" width="120">
+        <!-- Phone number with icon -->
+        <p>&#128222; 086 020 9215</p>
+        <!-- Email address with icon -->
+        <p>&#9993; support@booking.com</p>
+        <!-- Head office address -->
+        <p>&#128205; Oosterdokskade 163, Amsterdam</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright bar at the very bottom of every page -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Booking.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Links to the external JavaScript file for interactivity -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
